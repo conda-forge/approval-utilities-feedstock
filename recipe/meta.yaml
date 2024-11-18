@@ -1,13 +1,13 @@
 {% set name = "approval-utilities" %}
-{% set version = "14.1.0" %}
+{% set version = "14.2.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/approval_utilities-{{ version }}.tar.gz
-  sha256: 9da9ff0e4b76c2484efc0e3076a297c309ab6e8a82eda23d035a6beba736b582
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/approval_utilities-{{ version }}.tar.gz
+  sha256: 6e7a651e5fbf905e55907e51cb02b9ae9367e4bc2cf530aedbfc5e02a13020a3
 
 build:
   noarch: python
@@ -16,10 +16,11 @@ build:
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
+    - setuptools
   run:
-    - python >=3.8
+    - python >={{ python_min }}
 
 test:
   imports:
@@ -27,6 +28,7 @@ test:
   commands:
     - pip check
   requires:
+    - python {{ python_min }}
     - pip
 
 about:
