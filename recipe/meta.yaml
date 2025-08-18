@@ -1,5 +1,5 @@
 {% set name = "approval-utilities" %}
-{% set version = "15.1.1" %}
+{% set version = "15.2.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/approval_utilities-{{ version }}.tar.gz
-  sha256: e772e801442ac338b198eb6accc6907c2167012432b5db3d197c78c6dc3d4383
+  sha256: fc5382bc4c9f05fa13e2e0c7ce81c8ad4686b19fdc868fd53d20cf8147f77ef2
 
 build:
   noarch: python
