@@ -1,0 +1,45 @@
+schema_version: 1
+
+context:
+  name: approval-utilities
+  version: "19.0.0"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/approval_utilities-${{ version }}.tar.gz
+  sha256: f8579554401051b3639f58eb29fa118c2131b772247cb919bfd611ecf9739de0
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - setuptools
+  run:
+    - python >=${{ python_min }}
+
+tests:
+  - python:
+      imports:
+        - approval_utilities
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+
+about:
+  summary: Utilities for your production code that work well with approvaltests
+  license: Apache-2.0
+  license_file: LICENSE
+  homepage: https://github.com/approvals/ApprovalTests.Python
+
+extra:
+  recipe-maintainers:
+    - apmorton
