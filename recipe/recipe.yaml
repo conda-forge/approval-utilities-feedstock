@@ -1,15 +1,14 @@
 schema_version: 1
 
 context:
-  name: approval-utilities
   version: "19.0.0"
 
 package:
-  name: ${{ name|lower }}
+  name: approval-utilities
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/approval_utilities-${{ version }}.tar.gz
+  url: https://pypi.org/packages/source/a/approval-utilities/approval_utilities-${{ version }}.tar.gz
   sha256: f8579554401051b3639f58eb29fa118c2131b772247cb919bfd611ecf9739de0
 
 build:
@@ -20,10 +19,12 @@ build:
 requirements:
   host:
     - python ${{ python_min }}.*
+    - setuptools >=69.0.0
+    - wheel
     - pip
-    - setuptools
   run:
     - python >=${{ python_min }}
+    - typing_extensions >=4.12.0
 
 tests:
   - python:
