@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "19.0.0"
+  version: "19.1.0"
 
 package:
   name: approval-utilities
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/a/approval-utilities/approval_utilities-${{ version }}.tar.gz
-  sha256: f8579554401051b3639f58eb29fa118c2131b772247cb919bfd611ecf9739de0
+  sha256: b34ac75c27f425d1bd14c60cc11afaeb39d95d7bf76cf0a244a55a060227787d
 
 build:
   number: 0
